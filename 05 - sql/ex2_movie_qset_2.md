@@ -1,7 +1,9 @@
 # SQL Movie-Rating Query Extra Exercises Answers
 
 This is the seemingly correct answers to the SQL Movie Rating Query Extra exercises from 
-Prof. J. Widom (infamous :) db class.
+[Prof. J. Widom][2] (infamous :) db class.
+
+The `sql` script generating the database for this exercise is located [here][1]
 
 ## Q1
 
@@ -233,3 +235,6 @@ select distinct M.director, M.title, T.max_stars
           M.mID = Ra.mID;
 ```
 
+
+[1]: schemas/rating.sql
+[2]: http://cs.stanford.edu/people/widom/

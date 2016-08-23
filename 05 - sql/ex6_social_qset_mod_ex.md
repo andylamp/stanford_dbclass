@@ -1,7 +1,9 @@
 # SQL Social Network Query Modification Exercises Answers
 
 This is the seemingly correct answers to the SQL Social Network Query Modification 
-exercises from Prof. J. Widom (infamous :) db class.
+exercises from [Prof. J. Widom][2] (infamous :) db class.
+
+The `sql` script generating the database for this exercise is located [here][1]
 
 ## Q1
 
@@ -67,3 +69,6 @@ insert into Friend
 
     select * from Friend;
 ```
+
+[1]: schemas/social.sql
+[2]: http://cs.stanford.edu/people/widom/

@@ -1,7 +1,10 @@
 # SQL Movie Rating Modification Query Exercises Answers
 
 This is the seemingly correct answers to the SQL Movie Rating Modification Query 
-exercises from Prof. J. Widom (infamous :) db class.
+exercises from [Prof. J. Widom][2] (infamous :) db class.
+
+
+The `sql` script generating the database for this exercise is located [here][1]
 
 ## Q1
 
@@ -49,3 +52,6 @@ delete from Rating
                         where M.year < 1970 or M.year > 2000)
           and Rating.stars < 4;
 ```
+
+[1]: schemas/rating.sql
+[2]: http://cs.stanford.edu/people/widom/
