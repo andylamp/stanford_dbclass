@@ -11,6 +11,6 @@ In this chapter; at least in my edition of the course (2014-) there are three (`
 exercises, mostly covering `DTD` formation; each of which can be found in these 
 links: [Q1][1], [Q2][2], [Q3][3]. Needless to say, answers are included.
 
-[1]: q1/q1.md
-[2]: q2/q2.md
-[3]: q3/q3.md
+[1]: xml-ex/q1/q1.md
+[2]: xml-ex/q2/q2.md
+[3]: xml-ex/q3/q3.md
