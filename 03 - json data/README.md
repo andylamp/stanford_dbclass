@@ -16,6 +16,8 @@ the quiz questions as well as their answers.
 
 Which of the following is NOT a valid `JSON` object?
 
+The *four* generated options in this instance were the following:
+
 A:
 
 ```json
@@ -61,6 +63,8 @@ The correct answer in this instance was to select option **B**.
 ## Q2
 
 Which of the following is NOT a valid `JSON` array?
+
+The *four* generated options in this instance were the following:
 
 A:
 
@@ -122,6 +126,8 @@ Consider the following `JSON` Schema specification:
 
 Then select, from the choices below, the `JSON` data that *is valid* according to 
 the `JSON` Schema specification above.
+
+The *four* generated options in this instance were the following:
 
 A:
 
@@ -188,7 +194,7 @@ Which of the following could NOT be included as part of a `JSON` Schema specific
 that is satisfied by the JSON data above? Assume that every 
 letter `("A", "B", "C", ...)` appears in the `JSON` Schema specification *exactly once*.
 
-The selection of answers (in this instance) were:
+The *four* generated options in this instance were the following:
 
 A: 
 
