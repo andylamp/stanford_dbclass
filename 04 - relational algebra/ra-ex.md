@@ -142,7 +142,7 @@ Find all pizzerias that serve every pizza eaten by people over 30.
 This query is very challenging; extra congratulations if you get it right.
 
 My tip: This known as the *division operation*; quite intimidating at first for sure. 
-You can learn a bit more about here using [this][5] and [this][6]. Hope that helps!
+You can learn a bit more about it using [this][5] and [this][6]. Hope that helps!
 
 ```
 (\project_{pizzeria} Serves)
