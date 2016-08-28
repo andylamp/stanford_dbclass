@@ -1,5 +1,6 @@
 .idea
 
-*.pdf
+rel*.pdf
+json*.pdf
 
 *.iml
