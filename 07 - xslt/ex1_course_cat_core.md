@@ -7,7 +7,7 @@ The `XML` data is located [here][1]
 
 ## Q1
 
-Return a list of department titles. 
+Return a list of department `Titles` elements. 
 
 Your solution should fill in the following stylesheet: 
 
@@ -41,8 +41,8 @@ The answer is the following:
 
 ## Q2
 
-Return a list of department elements with no attributes and two sub-elements each: 
-the department title and the entire Chair sub-element structure. 
+Return a list of `Department` elements with no attributes and two sub-elements each: 
+the department title and the entire `Chair` sub-element structure. 
 
 Your solution should fill in the following stylesheet: 
 
