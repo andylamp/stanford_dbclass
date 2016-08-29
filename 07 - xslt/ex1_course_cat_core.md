@@ -3,7 +3,7 @@
 This is the seemingly correct answers to the XSLT Course Catalog Core (graded)
 exercises from [Prof. J. Widom][2] (infamous :) db class.
 
-The `XML` data is located [here][1]
+The `XML` data is located [here][1].
 
 ## Q1
 

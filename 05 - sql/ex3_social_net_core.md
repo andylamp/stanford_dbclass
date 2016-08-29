@@ -3,7 +3,7 @@
 This is the seemingly correct answers to the SQL Social Network Query exercises from 
 [Prof. J. Widom][2] (infamous :) db class.
 
-The `sql` script generating the database for this exercise is located [here][1]
+The `sql` script generating the database for this exercise is located [here][1].
 
 ## Q1
 

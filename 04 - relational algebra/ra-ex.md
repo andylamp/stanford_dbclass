@@ -5,7 +5,7 @@ exercises from [Prof. J. Widom][1] (infamous :) db class. As an evaluator
 we use the `RA` Interpreter from Jun Yang et al. which you can grab [here][2]
 as well as get a syntax overview of the `RA` language [here][3]
 
-The `SQL` data used to execute the `RA` queries upon is located [here][4]
+The `SQL` data used to execute the `RA` queries upon is located [here][4].
 
 ## Q1
 
