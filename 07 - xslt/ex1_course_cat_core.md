@@ -7,7 +7,7 @@ The `XML` data is located [here][1]
 
 ## Q1
 
-Return a list of department `Titles` elements. 
+Return a list of the department `Title` elements contained in [1][1]. 
 
 Your solution should fill in the following stylesheet: 
 
