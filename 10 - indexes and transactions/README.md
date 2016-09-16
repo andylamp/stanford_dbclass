@@ -8,8 +8,8 @@ assignments include two (2) quiz sets.
 The quizzes are about Indexes and Transactions; in this version of the course both 
 are graded.
 
-* Indexes answers are located [here][1]
-* Transactions answers are located [here][2]
+* Indexes answers are located [here][1].
+* Transactions answers are located [here][2].
 
 [1]: a
 [2]: b

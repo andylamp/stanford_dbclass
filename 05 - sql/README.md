@@ -14,18 +14,18 @@ quite challenging.
 
 The movie rating exercises are the following:
 
-* Core-set: basic query formation, [here][3] (graded)
-* Extra-set: basic and challenging queries, [here][4] (ungraded)
-* Modification: data manipulation (updates, deletions, insertions), [here][5] (ungraded)
+* Core-set: basic query formation, [here][3] (graded).
+* Extra-set: basic and challenging queries, [here][4] (ungraded).
+* Modification: data manipulation (updates, deletions, insertions), [here][5] (ungraded).
 
 
 ### Social-Network Exercises
 
 The social network exercises are the following:
 
-* Core-set: basic query formation, [here][6] (graded)
-* Extra-set: basic and challenging queries, [here][7] (ungraded) 
-* Modification: data manipulation (updates, deletions, insertions), [here][8] (graded)
+* Core-set: basic query formation, [here][6] (graded).
+* Extra-set: basic and challenging queries, [here][7] (ungraded). 
+* Modification: data manipulation (updates, deletions, insertions), [here][8] (graded).
 
 [1]: sql-schemas/rating.sql
 [2]: sql-schemas/social.sql

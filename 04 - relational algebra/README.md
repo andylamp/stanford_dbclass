@@ -8,7 +8,7 @@ which is for the exercises is located [here][1].
 
 The quiz for the Relational Algebra chapter includes finding the correct tuple 
 which belongs to the result set of a query result. You can view the answers
-for the quiz [here][2]
+for the quiz [here][2].
 
 ## Exercises
 

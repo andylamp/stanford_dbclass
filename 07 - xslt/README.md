@@ -11,15 +11,15 @@ to it.
 
 The Course Catalog exercises are the following:
 
-* Core-set: basic query formation, [here][3] (graded)
-* Extra-set: basic and challenging queries, [here][4] (ungraded) 
+* Core-set: basic query formation, [here][3] (graded).
+* Extra-set: basic and challenging queries, [here][4] (ungraded).
 
 ## World-Country
 
 The World Country exercises are the following:
 
-* Core-set: basic query formation, [here][5] (graded)
-* Extra-set: basic and challenging queries, [here][6] (ungraded) 
+* Core-set: basic query formation, [here][5] (graded).
+* Extra-set: basic and challenging queries, [here][6] (ungraded).
 
 
 [1]: xml-data/countries.xml

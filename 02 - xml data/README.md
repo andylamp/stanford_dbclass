@@ -7,7 +7,7 @@ that are used for the exercises are located [here][1] and [here][2] respectively
 ## Quizzes
 
 The quiz for the `XML` chapter includes some basic answers regarding how `XML` is 
-formatted and matched against a `DTD`; answers are located [here][3]
+formatted and matched against a `DTD`; answers are located [here][3].
 
 ## Exercises
 
