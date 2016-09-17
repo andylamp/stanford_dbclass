@@ -1,4 +1,4 @@
-# OLAP Chapter
+# Online Analytical Processing (OLAP) Chapter
 
 In this chapter the notions of Online Analytical Processing (OLAP) are introduced. 
 Graded assignments include one (1) quiz set, for which answers are provided below.
