@@ -99,10 +99,13 @@ In my instance I had the following options to choose from:
 In order to better understand how the recursion advances we will look at the manager
 hierarchy, which is illustrated in the following figure.
 
-Now additionally the *initial* seed `Peer` table for our recursion is 
-the following:
 
- `Peer0`
+Now, observe the that fact that in each step the recursion *descends* one level of the manager
+tree and locates the peer tuples which are added to the final result. Thus in iteration level
+1 we have the employees that have the same manager marked as peers; thus the *initial* 
+seed `Peer` table for our recursion is the following:
+
+ `Peer0`:
  
 |   X  |   Y   |
 |------|-------|
@@ -114,10 +117,6 @@ the following:
 | 2 | 1 |
 
 
-Now, observe the that fact that in each step the recursion *descends* one level of the manager
-tree and locates the peer tuples which are added to the final result. Thus in iteration level
-1 we have the employees that have the same manager marked as peers the result of which is
-indicated in `Peer0`.
 
 ## Q3
 
