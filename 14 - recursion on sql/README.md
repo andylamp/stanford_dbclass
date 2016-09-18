@@ -103,8 +103,9 @@ Now additionally the *initial* seed `Peer` table for our recursion is
 the following:
 
  `Peer0`
-| X | Y |
-|---|---|
+ 
+|   X  |   Y   |
+|------|-------|
 | 9 | 8 |
 | 7 | 6 |
 | 6 | 5 |
