@@ -156,8 +156,11 @@ on the number of tuples of the result, which is shown below,
  specifically:
  
  1) 4*7*3 = 28*3 = 84
+ 
  2) 5*4*3 = 20*3 = 60
+ 
  3) 4*7*3 = 28*3 = 84
+ 
  4) 5*4*3 = 20*3 = 60
  
  Moving on let's examine the group by version with the cube that's shown in Query 3. Recall
@@ -185,7 +188,8 @@ on the number of tuples of the result, which is shown below,
 
 This scheme happens for all of the value combinations in the table, notice though the absence 
 of a `null` value for the `A` column. This is intentional as in roll-up there is *only one*
-such column which is the the group that contains everything from `A`, `B` and `C`.
+one column that has `null` for every column which is the the group that contains 
+everything from `A`, `B` and `C`.
 
 Now, we can easily see an emerging pattern; the easiest way to calculate this is to
 calculate the regular group by number of tuples and add to that the number of extra 
