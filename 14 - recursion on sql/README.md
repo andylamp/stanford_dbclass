@@ -97,8 +97,10 @@ In my instance I had the following options to choose from:
 ### Q2 Answer
 
 In order to better understand how the recursion advances we will look at the manager
-hierarchy, which is illustrated in the following figure.
+hierarchy, which is illustrated in the following figure (you can also download a 
+vector version of this [here][1]).
 
+![manager hierarchy][myimage]
 
 Now, observe the that fact that in each step the recursion *descends* one level of the manager
 tree and locates the peer tuples which are added to the final result. Thus in iteration level
@@ -186,3 +188,6 @@ In my instance I had the following options to choose from:
  * D: Neither (A) nor (B) give the correct answer with (4) and (6).
 
 ### Q3 Answer
+
+[myimage]: manager_hierarchy.jpg 
+[1]: manager_hierarchy.pdf
