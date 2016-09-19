@@ -9,7 +9,8 @@ provided below.
 
 The quiz is really short and tests really basic stuff about how basic notions of 
 recursion work. Bear in mind that recursion **is hard** both to grasp and use effectively.
-If you think you don't get how something recursive works
+If you think you don't get how something recursive works, my personal advice is to create 
+a mock up example and solve it step by step.
 
 
 ## Q1
