@@ -65,7 +65,7 @@ Now before we jump into the answer let's get our terminology straight.
 * Slicing means filtering data of the cube by **constraining** data across a **single** dimension (e.g. take all items 
 whose size is less than 10).
 * Dicing is exactly the same as *slicing* by the **constraining** of the data 
-happens across **multiple** dimensions
+happens across **multiple** dimensions, so instead of a slice we get a *chunk* or *dice* of data.
  
 Now since we got that out of the way, looking from our possible options to choose from we
 see that the only logical solution is the option **A** which says that going
