@@ -155,13 +155,13 @@ on the number of tuples of the result, which is shown below,
  This is evident as all of the provided tuples have their `d` values equal to `a*b*c`,
  specifically:
  
- 1) 4*7*3 = 28*3 = 84
+ 1) `4*7*3 = 28*3 = 84`
  
- 2) 5*4*3 = 20*3 = 60
+ 2) `5*4*3 = 20*3 = 60`
  
- 3) 4*7*3 = 28*3 = 84
+ 3) `4*7*3 = 28*3 = 84`
  
- 4) 5*4*3 = 20*3 = 60
+ 4) `5*4*3 = 20*3 = 60`
  
  Moving on let's examine the group by version with the cube that's shown in Query 3. Recall
  from the lectures that cube just uses every combination of attributes across every dimension.
