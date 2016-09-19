@@ -24,7 +24,7 @@ With Recursive Mystery(X,Y) As
     Select m1.X, m2.Y
     From Mystery m1, Mystery m2
     Where m2.X = m1.Y + 1)
-Select Max(Y-X) + 1 From Mystery
+Select Max(X-Y) + 1 From Mystery
 ```
 
 While the definition looks complicated, the query in fact computes a property of `T` that can be 
@@ -41,6 +41,110 @@ In my instance I had the following options to choose from:
  * D: If `T` = {1, 5, 9, 10, 12, 15} then the query returns 6.
 
 ### Q1 Answer
+
+Now this is **tricky** because of two facts. First one being recursion itself, but more
+importantly the operation in `Max` is wrong... there must have been a typo there as the 
+answers back this evidence as you'll see in a bit. In the original text the operation
+inside `Max` was `Max(Y-X)` but it reality it should be `Max(X-Y)`, which gives the
+correct result (or an `abs` would fix this... but that's not the point).
+
+What this recursion calculates is the **max** distance between two numbers incremented by 
+one (in order to include also the starting point). Let's see how this might go, first
+here is out `T` table:
+
+|   T |
+|-----|
+|  2  |
+|  4  |
+|  5  |
+|  6  |
+|  8  |
+| 10  |
+| 11  |
+
+Firstly here is the initial state of our recursion on round 1:
+
+| M.X | M.Y |
+|------|-----|
+| 2 |  2 |
+| 4 |  4 |
+| 5 | 5 |
+| 6 | 6 |
+| 8 | 8 |
+| 10 | 10 |
+| 11 | 11 |
+
+Now let's construct the `M1` and `M2` tables for this round, which is shown below.
+
+|  M1.X | M1.Y | M2.X | M2.Y |
+|--------|-------|-----|------|
+| 2 | 2 | 2 | 2  |
+| 4 | 4  | 4 | 4  |
+| 5 | 5 | 5 | 5 |
+| 6 | 6 | 6 | 6 |
+| 8 | 8 | 8 | 8 |
+| 10 | 10 | 10 | 10 |
+| 11 | 11 | 11 | 11 |
+
+Now recall that our join condition is `where m2.X = m1.Y + 1` which are essentially
+the following tuples:
+
+|  M1.X | M1.Y | M2.X | M2.Y |
+|--------|-------|-----|------|
+| 5 | 5  | 4 | 4  |
+| 6 | 6 | 5 | 5 |
+| 11 | 11 | 10 | 10 |
+
+From them we have to take `M1.X` and `M2.Y` which are added back to our `Mystrery` table,
+so in the initial step of round 2 of the recursion `Mystery` table has the following
+tuples:
+
+| M.X | M.Y |
+|------|-----|
+| 2 |  2 |
+| 4 |  4 |
+| 5 | 5 |
+| 6 | 6 |
+| 8 | 8 |
+| 10 | 10 |
+| 11 | 11 |
+|----|----|
+| 5  | 4 |
+| 6  | 5 |
+| 11 | 10 |
+
+
+Moving on we select the tuples, which are matched; these are the following:
+
+|  M1.X | M1.Y | M2.X | M2.Y |
+|--------|-------|-----|------|
+| 6 | 5 | 5 | 4 |
+
+So after this step our `Mystery` table has the following tuples:
+
+
+| M.X | M.Y |
+|------|-----|
+| 2 |  2 |
+| 4 |  4 |
+| 5 | 5 |
+| 6 | 6 |
+| 8 | 8 |
+| 10 | 10 |
+| 11 | 11 |
+| 5  | 4 |
+| 6  | 5 |
+| 11 | 10 |
+|----|----|
+| 6  | 4 |
+
+We can easily see (I'll leave that as an exercise for you) that there are no **new** tuples
+added after we reach this state. Taking the `X-Y` operation yields and then the `Max` yields
+`2`, which is when incremented by `1` to give the final result of `3`.
+
+Hence the correct answer is **C**, e.g. when `T` = {2, 4, 5, 6, 8, 10, 11} 
+then the query returns 3.
+
 
 ## Q2
 
@@ -107,7 +211,7 @@ tree and locates the peer tuples which are added to the final result. Thus in it
 1 we have the employees that have the same manager marked as peers; thus the *initial* 
 seed `Peer` table for our recursion is the following:
 
- `Peer0`:
+ `Peer1`:
  
 |   X  |   Y   |
 |------|-------|
@@ -119,6 +223,58 @@ seed `Peer` table for our recursion is the following:
 | 2 | 1 |
 
 
+Intuitively, as the recursion in SQL only stops when a fixed point is reach (e.g. no new 
+tuples are added to the recursive relation) we have to show the steps that this is achieved
+and the correct answer will probably show along the way as well.
+
+Round 2 of the recursion has the following table:
+
+
+ `Peer2`:
+ 
+|   X  |   Y   |
+|------|-------|
+| 9 | 8 |
+| 7 | 6 |
+| 6 | 5 |
+| 4 | 3 |
+| 3 | 2 |
+| 2 | 1 |
+|---|---|
+| 5 | 7 |
+| 5 | 7 |
+| 6 | 7 |
+
+We see that there is only three tuples added in this round, these pairs indicate that
+these employees are peers. Now let's move onto round three of the recursion which has
+the following table:
+
+
+ `Peer3`:
+ 
+|   X  |   Y   |
+|------|-------|
+| 9 | 8 |
+| 7 | 6 |
+| 6 | 5 |
+| 4 | 3 |
+| 3 | 2 |
+| 2 | 1 |
+| 6 | 7 |
+| 5 | 7 |
+| 5 | 6 |
+|---|---|
+| 1 | 2 |
+| 1 | 3 |
+| 1 | 4 |
+| 2 | 3 |
+| 2 | 4 |
+| 3 | 4 |
+
+We see a lot more tuples that are added now; this is due to the fan out of the hierarchy tree
+as we go down, but the principle is the same. Now take a look at our options and in this
+step we will see that the tuple `(1, 4)` is added in this round. Hence it also the 
+correct answer, which is option **C**.
 
 ## Q3
 
