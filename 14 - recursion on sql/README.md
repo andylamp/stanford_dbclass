@@ -8,7 +8,8 @@ provided below.
 # Quiz
 
 The quiz is really short and tests really basic stuff about how basic notions of 
-recursion work.
+recursion work. Bear in mind that recursion **is hard** both to grasp and use effectively.
+If you think you don't get how something recursive works
 
 
 ## Q1
@@ -344,6 +345,98 @@ In my instance I had the following options to choose from:
  * D: Neither (A) nor (B) give the correct answer with (4) and (6).
 
 ### Q3 Answer
+
+This can be easily answers from the lectures as this is the query that's used in them. Given
+the above options the correct answer is **C**, (B) gives the correct answer with (1), (2), 
+(3), and (6) only. Moreover, the *only* query that gives the *correct* answer whether we 
+use (A) or (B) is (2).
+
+I won't talk why these give the correct answer, as it's really straightforward but I'll 
+briefly talk why (4) and (5) don't give the correct answer when using (B) or (A). Now on (4)
+observe that inside `where` we filter the parents using `Eve` and we select `Parent.Par` 
+to be our `X` column from `Ancestor` and the `Y` column to be `Ancestor.Y`. When done,
+that would only give us the result until the grandchildren of `Eve`. Concretely, consider
+this example:
+
+Let `parent` have the following snapshot:
+
+| p | c |
+|-----|------|
+| Eve | John |
+| Eve | Adam |
+| Adam | Bruce |
+| Adam | Coco |
+| Coco | Jo |
+| Jo | Doe |
+
+Now in the initial relation for the recursion seed we would have:
+
+`Ancestor` on round 1
+
+| X | Y |
+|-----|------|
+| Eve | John |
+| Eve | Adam |
+| Adam | Bruce |
+| Adam | Coco |
+| Coco | Jo |
+| Jo | Doe |
+
+While parent would always have:
+
+`Parent` after filtering
+
+| p | c |
+|-----|------|
+| Eve | John |
+| Eve | Adam |
+
+Now moving onto round two of the recursion we have the following snapshot for `Ancestor`:
+
+`Ancestor` on round 2
+
+| X | Y |
+|-----|------|
+| Eve | John |
+| Eve | Adam |
+| Adam | Bruce |
+| Adam | Coco |
+| Coco | Jo |
+| Jo | Doe |
+|----|-----|
+| Eve | Bruce |
+| Eve | Coco |
+
+And this would stop there, as when joining with `Parent` no new descendants
+
+Now moving onto (5), we can clearly see why this is not correct as we filter out the tuples
+from `Parent` in the initial relation while in the recursion we are self-joining with the 
+`Ancestor` relation which does not have all the information required. Concretely, consider
+this example:
+
+Let `Parent` have the following snapshot:
+
+`Parent`:
+
+| p | c |
+|-----|------|
+| Eve | John |
+| Eve | Adam |
+| Adam | Bruce |
+| Adam | Coco |
+
+Now in the initial relation for the recursion seed we would have:
+
+`Ancestor`
+
+| X | Y |
+|-----|------|
+| Eve | John |
+| Eve | Adam |
+
+But even when we self-join we would never include the tuples `(Adam, Brunce)` 
+and `(Adam, Coco)` as that information has been filtered out already. Thus, 
+this method is inherently wrong.
 
 [myimage]: manager_hierarchy.jpg 
 [1]: manager_hierarchy.pdf
