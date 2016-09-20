@@ -89,10 +89,10 @@ Which of the following combinations of values is correct?
 
 In my instance I had the following options to choose from:
 
- * A: A:1000, B:20, E:10
- * B: A:1000, C:1000, D:10 
- * C: B:20, C:10, E:1
- * D: B:1000, C:10, D:10
+ * A: `A:1000`, `B:20`, `E:10`
+ * B: `A:1000`, `C:1000`, `D:10` 
+ * C: `B:20`, `C:10`, `E:1`
+ * D: `B:1000`, `C:10`, `D:10`
  
 ### Q2 Answer
 
