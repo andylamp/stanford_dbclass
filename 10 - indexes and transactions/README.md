@@ -145,10 +145,10 @@ can cause the two transactions to exhibit **non-serializable** behavior?
 
 In my instance I had the following options to choose from:
 
- * A: 
- * B:  
- * C: 
- * D:
+ * A: `T2`: `set transaction isolation level serializable; update S set B=5; delete from R; commit;`
+ * B: `T2`: `set transaction isolation level serializable; update R set A=4; update S set B=5 where B<5; commit;` 
+ * C: `T2`: `set transaction isolation level serializable; delete from S; insert into S values (6); commit;`
+ * D: `T2`: `set transaction isolation level serializable; insert into S values (5); delete from R where A=2; commit;`
 
 ### Q1 Answer
 
@@ -189,10 +189,10 @@ of the following sums could be produced by Alice's transaction?
 
 In my instance I had the following options to choose from:
 
- * A: 
- * B:  
- * C: 
- * D:
+ * A: 950
+ * B: 1050
+ * C: 1030
+ * D: 1040
  
 ### Q2 Answer
 
@@ -234,9 +234,9 @@ not if all three run under isolation level *SERIALIZABLE*?
 
 In my instance I had the following options to choose from:
 
- * A: 
- * B:  
- * C: 
- * D:
+ * A: 1060
+ * B: 1040
+ * C: 1020
+ * D: 1010
  
 ### Q3 Answer
