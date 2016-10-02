@@ -152,6 +152,17 @@ In my instance I had the following options to choose from:
 
 ### Q1 Answer
 
+Now, we will examine each answer separately to determine which is the correct answer and why; let's start 
+with option `A`. This option says that we update `S` and perform a delete of all the records in `R`. This
+actually looks like a really good candidate for our answer as *both tables* are *modified* in this transaction; 
+but for the sake of completeness let's examine the other options as well. Option `B` updates table `R` and
+`S` but with a catch; it only updates the table `S` when `B < 5` holds, which given our table snapshots
+is never. So it seemingly it is indeed violating the serialization rules in theory, in practice it does not.
+Let's now look at option `C`, now again we see that we have two modification operations but this time they are
+both on the same table, `S`. This leads us to see due to the rules of repeatable read, only either state will be
+used as the same value is modified twice, so given our guarantees we still don't have any unexpected results. 
+Lastly, option `D` again modifies *both* tables but like option `B` the second statement has no effect in practice
+given our current table snapshots thus it does not have any ill effects.
 
 ## Question 2
 
@@ -196,6 +207,69 @@ In my instance I had the following options to choose from:
  
 ### Q2 Answer
 
+This is an interesting problem; as due to its nature there can be many outcomes. Let's examine which one
+of the provided options makes sense in our context. We know, by definition that the integers that previously summed
+up to 1000 do *not* contain 10, 20, and 30. We also know that our transactions run with *READ COMMITTED* isolation 
+level, this one *read* has to be *committed* before it is read. Now before we start performing our calculations we have
+to find the possible interleaving points for Alice's transaction, and judging from our permission levels 
+the obvious cases can be the following six (6).
+
+Let Alice's transaction be: `T1`, Betty's: `T2`, and Carol's: `T3`
+
+Thus `T1` can read from the following points:
+ 
+ 1. At the start of `T2` and *before* execution of `T3`
+ 2. At the start of `T2` and *after* execution of `T3`
+ 3. At the end of `T2` and *before* execution of `T3`
+ 4. At the end of `T2` and *after* execution of `T3`
+ 5. At the start of `T3` and *before* execution of `T2`
+ 6. At the end of `T3` and *after* execution of `T2`
+
+Now, if `T1` gets executed as per case 1, then none of the statements of `T1`, `T2` would have be executed so `T1`
+ would return the initial sum value, which was 1000. Let's now look at case 2, which is after `T3` has executed by
+ `T2` has not, remember that the integers contained in the summation *before* these transactions did not contain
+ 10, 20, or 30; this would in turn render `T3` useless as no values matched the statement, hence the value would 
+  again be equal to the initial summation, 1000. Moving on, we examine case 3, in this case `T1` is executed after `T2`
+  but before `T3`, so the values have been inserted in `R` but not removed; thus the summation would include *all* the 
+  new values plus the old summation value, which would be 1060. Now, we take a look at case 4, which assumes `T1` is
+  executed after both `T2` and `T3`, but in this instance `T3` has been executed *before* `T2` so there were no 
+  values to be removed, hence the result is the same as in the previous case, 1060. Let's now focus on case 5, which
+  assumes that `T1` will be executed before `T3` and before `T2`, this means that none of the table altering statements
+  have been executed, so the summation will be the same, 1000. Finally let's look at case 6, which is assumed that 'T1'
+  will execute after the execution of 'T3' and 'T2' where 'T2' execution proceeded the execution of 'T3'; in this case
+  the summation will be 1010. We see that none of the obvious cases are in our options, so we have to dig a bit deeper
+  to find out why this is the case.
+  
+There is one more scenario to consider, which is the one that `T3` executes in parallel with `T2` and the first 
+statement of `T3` is executed before starting `T2` (which is perfectly legal based on our isolation configuration) and
+the remaining statement of `T3` will be executed *after* `T2` has been committed. Thus we get the following sequence:
+
+```
+ T3: remove 30 (not exists)
+ T2: insert 10
+ T2: insert 20
+ T2: insert 30
+ T2: commits
+ T3: remove 20
+ T3: commits
+ T1: calculate sum -> 1040
+```
+
+This can also go both ways... `T2` can start to execute before `T3` and a similar scenario would occur as is shown
+below.
+
+```
+ T2: insert 10
+ T3: remove 30 (not exists)
+ T3: remove 20 (not exists)
+ T3: commits
+ T2: insert 20
+ T2: insert 30
+ T2: commits
+ T1: calculate sum -> 1060
+```
+
+Thus based on the above we can easily deduce that the correct answer is option **D**, 1040.
 
 ## Question 3
 
@@ -240,3 +314,30 @@ In my instance I had the following options to choose from:
  * D: 1010
  
 ### Q3 Answer
+
+Now based on what was described above, we can see that the question is essentially the same but with one little twist;
+the isolation level for each transaction is changed from *read committed* to *read uncommitted*, which means that 
+*dirty-reads* **are allowed**. As a refresher *dirty-reads*, are the data written by an *uncommitted* transaction.
+
+Now using the same terminology as the previous question but moving the commits a bit, we can see that the option of 
+1040 is the only one that makes sense.
+
+As before, let Alice's transaction be: `T1`, Betty's: `T2`, and Carol's: `T3`
+
+```
+ T3: remove 30 (not exists)
+ T2: insert 10
+ T2: insert 20
+ T2: insert 30
+ T3: remove 20
+ T3: commits
+ T2: commits
+ T1: calculate sum -> 1040
+```
+
+Now 1010 is the correct answer if everything is run in a serial fashion like so: `T2` -> `T3` -> `T1`, 1020 is not a 
+correct option as we would have inserted either 10 or 30 as well. Finally 1060 is again another option if the 
+transactions run serially  in the following order: `T3` -> `T2` -> `T1`
+
+Thus based on the above we can deduce that the correct answer is option **B**, 1040 which incidentally is the same 
+amount as in the previous question.
