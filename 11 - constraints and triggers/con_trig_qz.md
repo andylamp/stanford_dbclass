@@ -71,8 +71,11 @@ which may activate the trigger recursively. After all the inserts are done, whic
 of these tuples is **NOT** in table `R`?
 
 A: `(2, 4)`
+
 B: `(1, 3)`
+
 C: `(3. 1)`
+
 D: `(1, 4)`
 
 In order to give a complete answer on this we have to evaluate table `R` as
@@ -158,8 +161,11 @@ deletions, and/or updates on `S` and `T` are disallowed. Which of the following
 modifications will **not** violate **any** constraint?
 
 A: Inserting `(4, 10)` into `S`
+
 B: Deleting `(3, 5)` from `T`
+
 C: Inserting `(2, 5)` into `T`
+
 D: Inserting `(1, 2)` into `T`
 
 We can easily see that C, D, and A violate the primary key constraints
@@ -182,8 +188,11 @@ certain insertions, deletions, and/or updates on `S` and `T` are disallowed.
 Which of the following modifications will not violate any constraint?
 
 A: Updating `(2, 4)` in `T` to be `(2, 8)` 
+
 B: Inserting `(7, 3)` into `T`
+
 C: Inserting `(3, 3)` into `T`
+
 D: Inserting `(4, 13)` into `S`
 
 Some are very easy to discard as they violate the primary key constraints of `S`
@@ -213,8 +222,11 @@ into `R`. After trigger execution completes, which of the insertions results
 in `R` containing **exactly** 3 tuples?
 
 A: `(3, 8)`
+
 B: `(2, 6)`
+
 C: `(2, 9)`
+
 D: `(50, 0)`
 
 Let's evaluate each one of the options separately starting with A,
@@ -269,13 +281,13 @@ Suppose `R(e, f)` contains tuples `(1, 0)`, `(2, 4)`, `(3, 5)`, `(4, 3)`, and
  performed automatically. Which of the following deletions, after all integrity 
  actions, leaves table `T` empty?
  
- A. `delete from R where e+f>6`
+ A: `delete from R where e+f>6`
  
- B. `delete from R where e=f-2`
+ B: `delete from R where e=f-2`
  
- C. `delete from R where e>f`
+ C: `delete from R where e>f`
  
- D. `delete from R where e<4`
+ D: `delete from R where e<4`
  
 Again in order to completely satisfy this we have to evaluate each option 
 separately, so let's start with option A.
