@@ -39,7 +39,7 @@ the tuple insertion and **before** the check occurs.
 | 1 | 4 | 14 |
 | 2 | 3 | 15 |
 | 3 | 3 | 16 |
-|---|---|----|
+|----|----|----|
 | 4 | 4 | 9  | 
  
 Now we can easily see that the correct answer is option **A**, 
