@@ -269,10 +269,13 @@ Suppose `R(e, f)` contains tuples `(1, 0)`, `(2, 4)`, `(3, 5)`, `(4, 3)`, and
  performed automatically. Which of the following deletions, after all integrity 
  actions, leaves table `T` empty?
  
- A: `delete from R where e+f>6`
- B: `delete from R where e=f-2`
- C: `delete from R where e>f`
- D: `delete from R where e<4`
+ A. `delete from R where e+f>6`
+ 
+ B. `delete from R where e=f-2`
+ 
+ C. `delete from R where e>f`
+ 
+ D. `delete from R where e<4`
  
 Again in order to completely satisfy this we have to evaluate each option 
 separately, so let's start with option A.
@@ -364,8 +367,11 @@ Which of the following updates, after all integrity actions, leaves table
 less than 18?
 
 A: `update R set e=e-3 where f>1`
+
 B: `update R set e=e+3 where e<3`
+
 C: `update R set e=e+1`
+
 D: `update R set e=e+3 where e>=1`
 
 Again we will evaluate the different options until we find the correct answer
