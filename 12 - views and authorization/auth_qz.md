@@ -19,6 +19,8 @@ Which of the following privileges is **not** useful for execution of this `SQL` 
 
 # Q1 Options
 
+In my instance I had the following options:
+
 A: `UPDATE ON S`
 
 B: `SELECT ON T(a)`
@@ -49,6 +51,7 @@ After execution of statement 5, which of the following is **true**?
 
 # Q2 Options
 
+In my instance I had the following options:
 
 A: `E` no longer has privilege `UPDATE ON T`
 
@@ -85,6 +88,8 @@ Which of the following privileges is **not** useful for execution of this `SQL` 
 
 # Q3 Options
 
+In my instance I had the following options:
+
 A: `UPDATE ON T`
 
 B: `SELECT ON S(g)`
@@ -114,6 +119,8 @@ order:
 Which of the following statements is true?
 
 # Q4 Options
+
+In my instance I had the following options:
 
 A: `W` has privilege `SELECT ON T` after statement 6
 
