@@ -140,4 +140,5 @@ begin
     delete from Friend where ID1 = old.ID2 and ID2 = new.ID2;
 end
 ```
+
 [1]: http://cs.stanford.edu/people/widom/ 
