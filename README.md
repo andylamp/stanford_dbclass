@@ -20,7 +20,8 @@ for you and for others.
 
 # License
 
-Unless otherwise stated, this work is public domain.
+Unless otherwise stated, this work is licensed under [MIT][3].
 
 [1]: https://lagunita.stanford.edu/courses/DB/2014/SelfPaced/about
 [2]: http://cs.stanford.edu/people/widom/
+[3]: LICENSE
