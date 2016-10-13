@@ -5,10 +5,10 @@ In this repository I've compiled my solutions of the exercises and quizes that I
 during my completion of the (infamous) database class offered [here][1] (for free!) by 
 [Prof. Jennifer Widom][2].
 
-Solutions have are polished and section as per the new format of the source (mini-courses).
-In each of the mini-courses there are `markdown` (`.md`) files which have the solutions and
-code. Some queries, questions have some personal notes that I've found interesting. As 
-always, take everything with a *grain of salt*.
+Solutions have are polished and sectioned according to the new format of the source (self-paced 
+mini-courses). In each of the mini-courses there are `markdown` (`.md`) files which have the 
+solutions and code. Some queries, questions have some personal notes that I've found 
+interesting. As always, take everything with a *grain of salt*.
 
 # Important notes
 
