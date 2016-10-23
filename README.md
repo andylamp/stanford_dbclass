@@ -1,14 +1,14 @@
 # Stanford dbclass solutions
 
 
-In this repository I've compiled my solutions of the exercises and quizes that I did
+In this repository I've compiled my solutions for the exercises and quizes that I did
 during my completion of the (infamous) database class offered [here][1] (for free!) by 
 [Prof. Jennifer Widom][2].
 
-Solutions have are polished and sectioned according to the new format of the source (self-paced 
-mini-courses). In each of the mini-courses there are `markdown` (`.md`) files which have the 
-solutions and code. Some queries, questions have some personal notes that I've found 
-interesting. As always, take everything with a *grain of salt*.
+Solutions have been polished and sectioned according to the new format of the source (self-paced 
+mini-courses). In each of the mini-courses there are `markdown` (`.md`) files which have both the 
+solutions and as well as the accompanied code. Some queries, questions, and exercises have some 
+personal notes that I've found interesting. As always, take everything with a *grain of salt*.
 
 # Important notes
 
@@ -16,7 +16,7 @@ This course was by far the most educational course I've had in databases -- far
 exceeding in both quality and breadth the one that was offered by my University. 
 I sincerely urge you to try do these exercises yourself in order to get the most 
 out of it... and... please... *avoid copy-pasta*. It decreases the value of the course 
-for you and for others.
+for *you* and for others.
 
 # License
 
