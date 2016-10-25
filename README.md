@@ -14,7 +14,7 @@ personal notes that I've found interesting. As always, take everything with a *g
 
 This course was by far the most educational course I've had in databases -- far 
 exceeding in both quality and breadth the one that was offered by my University. 
-I sincerely urge you to try do these exercises yourself in order to get the most 
+I sincerely urge you to try and do these exercises yourself in order to get the most 
 out of it... and... please... *avoid copy-pasta*. It decreases the value of the course 
 for *you* and for others.
 
