@@ -1,7 +1,7 @@
 # Stanford dbclass solutions
 
 
-In this repository I've compiled my solutions for the exercises and quizes that I did
+In this repository I've compiled my solutions for the exercises and quizzes that I did
 during my completion of the (infamous) database class offered [here][1] (for free!) by 
 [Prof. Jennifer Widom][2].
 
