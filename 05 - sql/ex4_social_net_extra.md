@@ -94,5 +94,5 @@ select H.name, H.grade from
                 from Friend as F group by F.ID1) as T);
 ```
 
-[1]: schemas/social.sql
+[1]: sql-schemas/social.sql
 [2]: http://cs.stanford.edu/people/widom/

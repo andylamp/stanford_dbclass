@@ -236,5 +236,5 @@ select distinct M.director, M.title, T.max_stars
 ```
 
 
-[1]: schemas/rating.sql
+[1]: sql-schemas/rating.sql
 [2]: http://cs.stanford.edu/people/widom/

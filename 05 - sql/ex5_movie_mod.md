@@ -53,5 +53,5 @@ delete from Rating
           and Rating.stars < 4;
 ```
 
-[1]: schemas/rating.sql
+[1]: sql-schemas/rating.sql
 [2]: http://cs.stanford.edu/people/widom/

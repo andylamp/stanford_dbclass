@@ -125,5 +125,5 @@ select abs(
     ;
 ```
 
-[1]: schemas/rating.sql
+[1]: sql-schemas/rating.sql
 [2]: http://cs.stanford.edu/people/widom/

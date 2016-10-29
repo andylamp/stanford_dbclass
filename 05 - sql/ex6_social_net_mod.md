@@ -70,5 +70,5 @@ insert into Friend
     select * from Friend;
 ```
 
-[1]: schemas/social.sql
+[1]: sql-schemas/social.sql
 [2]: http://cs.stanford.edu/people/widom/
