@@ -5,7 +5,7 @@ In this repository I've compiled my solutions for the exercises and quizzes that
 during my completion of the (infamous) database class offered [here][1] (for free!) by 
 [Prof. Jennifer Widom][2].
 
-Solutions have been polished and sectioned according to the new format of the source (self-paced 
+Solutions have been polished and sectioned according to the new format of the course (self-paced 
 mini-courses). In each of the mini-courses there are `markdown` (`.md`) files which have both the 
 solutions and as well as the accompanied code. Some queries, questions, and exercises have some 
 personal notes that I've found interesting. As always, take everything with a *grain of salt*.
