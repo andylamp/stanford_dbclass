@@ -5,7 +5,7 @@ This is the seemingly correct answers to the SQL Movie Rating Query exercises fr
 
 The `sql` script generating the database for this exercise is located [here][1].
 
-##Q1
+## Q1
 
 Find the titles of all movies directed by Steven Spielberg.
 
@@ -13,7 +13,7 @@ Find the titles of all movies directed by Steven Spielberg.
 select title from Movie where director = 'Steven Spielberg';
 ```
 
-##Q2
+## Q2
 
 Find all years that have a movie that received a rating of 4 or 5, and sort 
 them in increasing order. 
@@ -25,7 +25,8 @@ select distinct year
     order by year asc;
 ```
 
-##Q3
+## Q3
+
 Find the titles of all movies that have no ratings. 
 
 ```sql
@@ -35,7 +36,7 @@ select distinct title
         (select distinct M.mID from Movie as M, Rating as R where M.mID = R.mID);
 ```
 
-##Q4
+## Q4
 
 Some reviewers didn't provide a date with their rating. Find the names of all reviewers 
 who have ratings with a NULL value for the date. 
@@ -46,7 +47,7 @@ select distinct Re.name
     where Ra.ratingDate is null and Re.rID = Ra.rID;
 ```
 
-##Q5
+## Q5
 
 Write a query to return the ratings data in a more readable format: reviewer name, movie title, 
 stars, and ratingDate. Also, sort the data, first by reviewer name, then by movie title, and 
@@ -59,7 +60,7 @@ select Re.name, M.title, Ra.stars, Ra.ratingDate
     order by Re.name, M.title, Ra.stars;
 ```
 
-##Q6
+## Q6
 
 For all cases where the same reviewer rated the same movie twice and gave it a higher 
 rating the second time, return the reviewer's name and the title of the movie. 
@@ -72,7 +73,7 @@ select R.name, M.title
           M.mID = Ra1.mID and M.mID = Ra2.mID;
 ```
 
-##Q7
+## Q7
 
 For each movie that has at least one rating, find the highest number of stars that movie 
 received. Return the movie title and number of stars. Sort by movie title. 
@@ -87,7 +88,7 @@ received. Return the movie title and number of stars. Sort by movie title.
     order by T.title;
 ```
 
-##Q8
+## Q8
 
 For each movie, return the title and the 'rating spread', that is, the difference between 
 highest and lowest ratings given to that movie. Sort by rating spread from highest to 
@@ -101,7 +102,7 @@ select M.title, (max(R.stars) - min(R.stars)) as spread
     order by spread desc, M.title;
 ```
 
-##Q9
+## Q9
 
 Find the difference between the average rating of movies released before 1980 and the 
 average rating of movies released after 1980. (Make sure to calculate the average rating 
