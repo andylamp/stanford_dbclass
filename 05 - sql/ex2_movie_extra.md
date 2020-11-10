@@ -157,12 +157,12 @@ select M.title, M.director
 
 ## Q10
 
-```sql
-
 Find the movie(s) with the highest average rating. Return the movie title(s) and average rating.
  
 Hint: This query is more difficult to write in SQLite than other systems; you might think of it as 
 finding the highest average rating and then choosing the movie(s) with that average rating. 
+
+```sql
 
 select M.title, T2.avg_rating
     from Movie as M,
