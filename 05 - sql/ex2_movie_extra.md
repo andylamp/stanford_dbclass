@@ -214,7 +214,7 @@ A common pitfall that gives the correct answer here is the following:
 ```sql
 select M.director, M.title, max(stars)
     from Movie as M, Rating as Ra
-    where M.mID = Ra.mID and M.director not null
+    where M.mID = Ra.mID and M.director is not null
     group by M.director;
 ```
 
