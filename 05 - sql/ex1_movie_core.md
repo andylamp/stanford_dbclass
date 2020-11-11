@@ -79,7 +79,7 @@ For each movie that has at least one rating, find the highest number of stars th
 received. Return the movie title and number of stars. Sort by movie title. 
 
 ```sql
-    select T.title, T.s
+select T.title, T.s
     from
         (select M.title, R.mID, count(*) as ratCount, max(R.stars) as s from Movie as M, Rating as R
         where M.mID = R.mID
